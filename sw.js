@@ -1,4 +1,4 @@
-const CACHE = 'mgs-caddie-v4'
+const CACHE = 'mgs-caddie-v5'
 const BASE = new URL('./', self.registration.scope).toString()
 const APP_SHELL = new URL('./', BASE).toString()
 const MANIFEST = new URL('manifest.webmanifest', BASE).toString()
