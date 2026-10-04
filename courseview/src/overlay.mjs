@@ -13,7 +13,11 @@ const imageRoute=course=>{
  const tee=imagePoint(course?.points?.tee),green=imagePoint(course?.points?.green);
  if(!tee||!green||tee.y<=green.y)return null;
  const explicit=Array.isArray(course?.centerline)?course.centerline.map(imagePoint).filter(Boolean):[];
- const waypoints=[tee,imagePoint(course?.points?.right),imagePoint(course?.points?.left),green].filter(Boolean);
+ const safeWaypoint=source=>{
+  if(!source||typeof source.label==='string'&&/池|クリーク|バンカー|OB|くぼ地|ラフ|砂/.test(source.label))return null;
+  return imagePoint(source);
+ };
+ const waypoints=[tee,safeWaypoint(course?.points?.right),safeWaypoint(course?.points?.left),green].filter(Boolean);
  const route=explicit.length>=2?explicit:waypoints;
  if(route.length<2)return null;
  const cumulative=[0];
