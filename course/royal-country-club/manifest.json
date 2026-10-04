@@ -1,0 +1,576 @@
+{
+  "course": "ロイヤルカントリークラブ",
+  "route": "土日祝18ホールルート",
+  "format": "1080x1920 PNG",
+  "kind": "independent illustrative CourseView backgrounds",
+  "notIncluded": [
+    "OB boundary lines",
+    "unverified water",
+    "tee-specific positions",
+    "green selection",
+    "distance marks"
+  ],
+  "source": "research/royal-cc-18h-hazards.json reviewed attributes",
+  "holes": [
+    {
+      "hole": 1,
+      "file": "hole-01.png",
+      "par": 4,
+      "yardageRegular": 338,
+      "fairwayShape": "直線",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "right",
+            "axisPct": 93,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "left",
+            "axisPct": 60,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 2,
+      "file": "hole-02.png",
+      "par": 5,
+      "yardageRegular": 520,
+      "fairwayShape": "直線・細長い",
+      "reviewedHazards": {
+        "water": [
+          {
+            "side": "right",
+            "axisPct": 55,
+            "note": "右サイドの池／林帯の外側。攻略文に言及なし。要実地確認",
+            "inPlay": false,
+            "confidence": "medium",
+            "source": "layout-image only"
+          }
+        ],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": []
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 3,
+      "file": "hole-03.png",
+      "par": 4,
+      "yardageRegular": 380,
+      "fairwayShape": "直線",
+      "reviewedHazards": {
+        "water": [
+          {
+            "side": "left",
+            "axisPct": 55,
+            "note": "左サイドの池／林帯の外側。攻略文に言及なし。要実地確認",
+            "inPlay": false,
+            "confidence": "medium",
+            "source": "layout-image only"
+          }
+        ],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 93,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": []
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 4,
+      "file": "hole-04.png",
+      "par": 4,
+      "yardageRegular": 358,
+      "fairwayShape": "右ドッグレッグ",
+      "reviewedHazards": {
+        "water": [
+          {
+            "side": "right",
+            "axisPct": 35,
+            "note": "右ドッグの外側／林帯の外側。攻略文に言及なし。要実地確認",
+            "inPlay": false,
+            "confidence": "medium",
+            "source": "layout-image only"
+          }
+        ],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "center",
+            "axisPct": 55,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 5,
+      "file": "hole-05.png",
+      "par": 3,
+      "yardageRegular": 162,
+      "fairwayShape": "ショート・直線",
+      "reviewedHazards": {
+        "water": [
+          {
+            "side": "right",
+            "axisPct": 60,
+            "note": "右サイド縦長／林帯の外側。攻略文に言及なし。要実地確認",
+            "inPlay": false,
+            "confidence": "medium",
+            "source": "layout-image only"
+          }
+        ],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 90,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "right",
+            "axisPct": 78,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": []
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 6,
+      "file": "hole-06.png",
+      "par": 5,
+      "yardageRegular": 508,
+      "fairwayShape": "直線ロング",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "right",
+            "axisPct": 93,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "left",
+            "axisPct": 85,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "right",
+            "axisPct": 75,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 7,
+      "file": "hole-07.png",
+      "par": 3,
+      "yardageRegular": 146,
+      "fairwayShape": "ショート",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "right",
+            "axisPct": 88,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "left",
+            "axisPct": 80,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "right",
+            "axisPct": 65,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 8,
+      "file": "hole-08.png",
+      "par": 4,
+      "yardageRegular": 325,
+      "fairwayShape": "打ち上げ直線",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "right",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "left",
+            "axisPct": 80,
+            "note": "攻略文: グリーンから40yd左手前",
+            "source": "layout-image + strategy-text",
+            "confidence": "high"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 9,
+      "file": "hole-09.png",
+      "par": 4,
+      "yardageRegular": 341,
+      "fairwayShape": "直線",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "right",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "left",
+            "axisPct": 88,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "center",
+            "axisPct": 58,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 10,
+      "file": "hole-10.png",
+      "par": 4,
+      "yardageRegular": 348,
+      "fairwayShape": "左に緩くカーブ",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "right",
+            "axisPct": 88,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "left",
+            "axisPct": 70,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 11,
+      "file": "hole-11.png",
+      "par": 4,
+      "yardageRegular": 403,
+      "fairwayShape": "打ち上げ直線",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "center",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "left",
+            "axisPct": 45,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 12,
+      "file": "hole-12.png",
+      "par": 5,
+      "yardageRegular": 523,
+      "fairwayShape": "左ドッグレッグ",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 90,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "left",
+            "axisPct": 20,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 13,
+      "file": "hole-13.png",
+      "par": 4,
+      "yardageRegular": 319,
+      "fairwayShape": "ミドル",
+      "reviewedHazards": {
+        "water": [
+          {
+            "side": "center",
+            "axisPct": 72,
+            "note": "攻略文: グリーン手前が池、セカンド池越え",
+            "inPlay": true,
+            "confidence": "high",
+            "source": "layout-image + strategy-text"
+          }
+        ],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 83,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": []
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 14,
+      "file": "hole-14.png",
+      "par": 4,
+      "yardageRegular": 314,
+      "fairwayShape": "OBなし",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "center",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "left",
+            "axisPct": 85,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "right",
+            "axisPct": 65,
+            "note": "攻略文: 右の2つのクロスバンカー",
+            "source": "layout-image + strategy-text",
+            "confidence": "high"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 15,
+      "file": "hole-15.png",
+      "par": 5,
+      "yardageRegular": 485,
+      "fairwayShape": "左ドッグレッグ",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "center",
+            "axisPct": 90,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "left",
+            "axisPct": 87,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "left",
+            "axisPct": 46,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 16,
+      "file": "hole-16.png",
+      "par": 3,
+      "yardageRegular": 163,
+      "fairwayShape": "ショート池越え",
+      "reviewedHazards": {
+        "water": [
+          {
+            "side": "center",
+            "axisPct": 40,
+            "note": "攻略文: 池越えの打ち下ろしショート",
+            "inPlay": true,
+            "confidence": "high",
+            "source": "layout-image + strategy-text"
+          }
+        ],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 89,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "right",
+            "axisPct": 91,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": []
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 17,
+      "file": "hole-17.png",
+      "par": 3,
+      "yardageRegular": 144,
+      "fairwayShape": "フラットショート",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "right",
+            "axisPct": 95,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "left",
+            "axisPct": 84,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": []
+      },
+      "status": "illustrative_not_surveyed"
+    },
+    {
+      "hole": 18,
+      "file": "hole-18.png",
+      "par": 4,
+      "yardageRegular": 323,
+      "fairwayShape": "OBなし広い",
+      "reviewedHazards": {
+        "water": [],
+        "greensideBunkers": [
+          {
+            "side": "left",
+            "axisPct": 92,
+            "source": "layout-image",
+            "confidence": "medium"
+          },
+          {
+            "side": "right",
+            "axisPct": 90,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ],
+        "crossBunkers": [
+          {
+            "side": "center",
+            "axisPct": 28,
+            "source": "layout-image",
+            "confidence": "medium"
+          }
+        ]
+      },
+      "status": "illustrative_not_surveyed"
+    }
+  ]
+}

@@ -1,0 +1,1140 @@
+{
+  "schemaVersion": 1,
+  "release": "1.7",
+  "files": [
+    {
+      "path": "assets/courseview-original-v06.png",
+      "sha256": "7475e02400dff9edf2a162a771ee2923a320794442b741e5a88c470096895a1c",
+      "bytes": 3009616,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-01-aerial-v13.webp",
+      "sha256": "b872ed8ecd5a3bcf6e388577cdf0208d162cf3d03174d7816316462ab165e22f",
+      "bytes": 2514920,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-01-green-v13.webp",
+      "sha256": "b4267e2cea13ba74a2744b585a9baf07fbc54cfddd7d75186bb0c70b4f0ce151",
+      "bytes": 2297740,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-01-left-v13.webp",
+      "sha256": "8d1dcd531d1bdf0d23f95a40dfb985983f5b07feeb36f860c5703783fc8990b4",
+      "bytes": 2257834,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-01-right-v13.webp",
+      "sha256": "877df2228dabba945ae9963651a6d09785ec9ff26de25c106ed8c11ada80f902",
+      "bytes": 2122486,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-01-tee-v13.webp",
+      "sha256": "d22b37fde462a1546e748f3ff4ab7bfa92a7bed217bb18cae7b6afb54c8a7e0b",
+      "bytes": 2322366,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-02-aerial-v13.webp",
+      "sha256": "00a43271337cc450388d17be986519ff4f6fa30e50b1c8501ba642fb73c05fc3",
+      "bytes": 2597470,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-02-green-v13.webp",
+      "sha256": "e2e6e7fb7fd10027762ad58827a1a190fdf59e1b15254e6020461fa1ba24fbcb",
+      "bytes": 2260726,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-02-left-v13.webp",
+      "sha256": "803b62a22eb02d0e5c55b2f76e392b5b9b55497f10ce1ffda9cf24542a43cc8e",
+      "bytes": 2183604,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-02-right-v13.webp",
+      "sha256": "82376291808b953eabbde2418836fafebf6fa57f9b3560a7e30040c6c85ef60e",
+      "bytes": 2241816,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-02-tee-v13.webp",
+      "sha256": "a82396375df0201e809b7b56886e5cdaa640402ac68c758dba4de87223dd6e31",
+      "bytes": 2199266,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-03-aerial-v13.webp",
+      "sha256": "c7a2140bd13ad8e3c9451993845477726dcdc0b23af03f59c3ed81a50fd5f577",
+      "bytes": 2186230,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-03-green-v13.webp",
+      "sha256": "2fb65d74a07f7fdfe65ccbdf07ba9a3bd5ae4a98d8ac2c4dcbd42e46e96e4215",
+      "bytes": 2125362,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-03-left-v13.webp",
+      "sha256": "50fcd393b053df16cea0924108214962d316ddf8aada14215cdb09007b9a2626",
+      "bytes": 2203448,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-03-right-v13.webp",
+      "sha256": "e33ea3f00d293ebd6a7f20635f2bae490400cdb881101b58006122d393ebd5b3",
+      "bytes": 2118680,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-03-tee-v13.webp",
+      "sha256": "bb42d06478fa8a5a925bf5a112ca340703e96d7a983d0040f3269c515e00b64b",
+      "bytes": 1908534,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-04-aerial-v13.webp",
+      "sha256": "bcb4920dad64c6ceabacea669b8ec2b4894196fa42d629cf2bc88fb652a6ed02",
+      "bytes": 2504950,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-04-green-v13.webp",
+      "sha256": "d4ca8b52a5fc11ad25c4780bc1477eb3c5a004a48d2fbb42562495703ca711d5",
+      "bytes": 2305394,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-04-left-v13.webp",
+      "sha256": "dc77c6b0f59cf9237f39c301fd32600c8a75a84fcd3a8fe028d34f015410045d",
+      "bytes": 2191408,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-04-right-v13.webp",
+      "sha256": "0ae1889dc89d6338c9ba8064151e9f06ff09fbb3e3d75b585d4955a26a053ca1",
+      "bytes": 2105994,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-04-tee-v13.webp",
+      "sha256": "0dcfc4e6194b3d166c055b9713d5caa9c5d5cd8ed62e44452093565f055cd56e",
+      "bytes": 2240066,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-05-aerial-v13.webp",
+      "sha256": "95b96806d0675e086e5c4419a1fe571160d73af9d30155be1a2ba7d0c0621b9d",
+      "bytes": 2336504,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-05-green-v13.webp",
+      "sha256": "27bb5bf2b5775c670d55a57abc48ae68bc38cbbf2d827a25acbefe54cda4554c",
+      "bytes": 2368704,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-05-left-v13.webp",
+      "sha256": "3fc7855b1caf6bd3cec2c91904b95897f022394d481c747375c35ff300a16be8",
+      "bytes": 2318984,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-05-right-v13.webp",
+      "sha256": "ccc48f15ef271aace1c7bdef101ea5dd05a15be21d9475bc9a214414a4e85812",
+      "bytes": 2585712,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-05-tee-v13.webp",
+      "sha256": "46331ce8903f55c0117a01a92dfd8c3d7647bbfe7bd1284d4df86fa0336586f5",
+      "bytes": 2515310,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-06-aerial-v16.webp",
+      "sha256": "6ffcd3d1c84f71f420a75c38e11d8d30113a04fd61851452c52a6cfb50f79acd",
+      "bytes": 1924538,
+      "hole": 6,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-06-green-v16.webp",
+      "sha256": "803dc533f890dcf59b72eaa24395d4a44e142f57b9b3c8e2ad8bcd8b8b675f89",
+      "bytes": 2005050,
+      "hole": 6,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-06-left-v16.webp",
+      "sha256": "77734b585f0a10ec7baca731a30fd9b2fc4df49cabcdcb8d6eccb3c925218111",
+      "bytes": 1839390,
+      "hole": 6,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-06-right-v16.webp",
+      "sha256": "1647016ee32f29882397ed0ac89bf6dcb0eecad12c59330ec2d3b91954802136",
+      "bytes": 1824310,
+      "hole": 6,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-06-tee-v13.webp",
+      "sha256": "d55c2144da88515159e5187749409f3c36b60d4c3c24a8433176bfb2f968b016",
+      "bytes": 2393244,
+      "hole": 6,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-07-aerial-v13.webp",
+      "sha256": "5c9bdb93f9144b2eb1457818710a30965c1332db7bc18db53843b34072dff3da",
+      "bytes": 2419496,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-07-green-v13.webp",
+      "sha256": "468a7d2f55af2677364298009b9311be023975e902cfcea19c4fc86b8f54f9c7",
+      "bytes": 2181526,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-07-left-v13.webp",
+      "sha256": "505de055f80a6dc0f05e995d67eac6f4fbc37c5f58ce0696d81d511bd8d540f8",
+      "bytes": 2392626,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-07-right-v13.webp",
+      "sha256": "3aaca74847dde81ea87defc77344b0ae1dac8156da7c14ac2ba041345c295018",
+      "bytes": 2424158,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-07-tee-v13.webp",
+      "sha256": "085a3ddf5b3527820d0782296ed58f2a959c5d39d6523e43bd05e0a26969e4b8",
+      "bytes": 2367974,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-08-aerial-v13.webp",
+      "sha256": "9e8b58d1c9a76feb3028f10c101b486adc8691607be825f6667b6bb446118058",
+      "bytes": 2325164,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-08-green-v13.webp",
+      "sha256": "33cf8b51126889e65f230cee68be64da35f1bdbca11215922d478bfe48649ad0",
+      "bytes": 2186090,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-08-left-v13.webp",
+      "sha256": "213ceb6a2eeaa54398e37e0d017c11f29250ab9e2b29e5a2312a5baa3e68d44c",
+      "bytes": 2172160,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-08-right-v13.webp",
+      "sha256": "8524948e1b38aa9d83ea931398e6522f583946bd3fd46658cbd9342e073f584c",
+      "bytes": 2374680,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-08-tee-v13.webp",
+      "sha256": "310efe8b0f06389d98422ff746c8e9722e20ba0936d1c385d548293e979a9f2b",
+      "bytes": 2359130,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-09-aerial-v16.webp",
+      "sha256": "2744cc17e78507c469fdb66dd8db10b8fc6259259f93d2a5179a0150d69b18b9",
+      "bytes": 2055424,
+      "hole": 9,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-09-green-v17.webp",
+      "sha256": "2f591005be6ca47d0e30541f23bcc458694ec5c2ffcf0c016f6e2bc787c6450d",
+      "bytes": 2477170,
+      "hole": 9,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-09-left-v14.webp",
+      "sha256": "6ba2dea6b04419dd8fee1d5bccb0bf4896b773faa6e19015d6435775b2c69896",
+      "bytes": 2012442,
+      "hole": 9,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-09-right-v14.webp",
+      "sha256": "d5e9fb366dd9736abb732fe42478db39b217a3b95ba088b854aabfaf0e556a23",
+      "bytes": 1927088,
+      "hole": 9,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-09-tee-v13.webp",
+      "sha256": "89153520ce0e4ae58e461595ef3d63d8be65f4580359b9ee4b57a9eb7b5f20ea",
+      "bytes": 2431142,
+      "hole": 9,
+      "bundled": true
+    },
+    {
+      "path": "assets/hole-11-aerial-v10.webp",
+      "sha256": "8dc83dc8a4847188c09e28b288db04ba383cfa19cc87c8534c904d32d96dc15c",
+      "bytes": 2702298,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-11-green-v10.webp",
+      "sha256": "1fddbdbaba403e0c734d1b88acb73ce810c44f40aae3ff344de692e23c144937",
+      "bytes": 2315288,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-11-left-v10.webp",
+      "sha256": "5c492c0b58bb8ccf3f8d51e6ce3c6148adb6e374b61f05739fa742dd7fbd91fc",
+      "bytes": 2490962,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-11-right-v10.webp",
+      "sha256": "701461b0e7b3c583730a887eb68be56f183f0beaa052066f6cb21dab49697472",
+      "bytes": 2191926,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-11-tee-v10.webp",
+      "sha256": "628d1e39eda36dbac1424afecba4079c6a0a02e910c3f0ed21d3b0195458b37c",
+      "bytes": 2373646,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-12-aerial-v10.webp",
+      "sha256": "a5d42495fd7215a09153be59c3d1bf2c3e0633ed37a3e54c04ed109e19bfb407",
+      "bytes": 2506554,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-12-green-v10.webp",
+      "sha256": "ae201e18b6e2348d178e35978c600ff5444c7ad198bf1bbf8cdf0ef8b92f6c4a",
+      "bytes": 2368162,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-12-left-v10.webp",
+      "sha256": "c9d2326772fe56e412ec9d12f303d2aba7b7bb4739374c15d2688ccc5d0aa974",
+      "bytes": 2127446,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-12-right-v10.webp",
+      "sha256": "877ceb68337694839c58dfac1ba52d866803bf26a0196c6dc89da5d814875d31",
+      "bytes": 2331276,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-12-tee-v10.webp",
+      "sha256": "d3cca9571cd7089f37762457209f60f5388eb823db6b90c9582678118f6c61d1",
+      "bytes": 2464498,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-13-aerial-v10.webp",
+      "sha256": "1536cb90afb3579c923a204a385468e37ec8c139614c72f1853b33047498bc57",
+      "bytes": 2602510,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-13-green-v10.webp",
+      "sha256": "e381619319d0c11f514e69c609bbfdd671b01cb05b178b95b66b89ada1fbfa29",
+      "bytes": 2335924,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-13-left-v10.webp",
+      "sha256": "708648411cfa2eaeb8af49b1a253656e061bb12ba59c848f4839b5fadc1df1e8",
+      "bytes": 2428798,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-13-right-v10.webp",
+      "sha256": "b8f1e4db16b1be1176023b679f4a58fe185b407ceff0e33e437229b1d71b8b18",
+      "bytes": 2273892,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-13-tee-v10.webp",
+      "sha256": "6d6b6e4b9fc7498738cd66b7e60776def2f9a3169490a07146b081b5861472a1",
+      "bytes": 2498468,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-14-aerial-v10.webp",
+      "sha256": "ace3c94c627f7f4416ff9e21c33f6a4eb72e0636b11b671748034049c69dcbe3",
+      "bytes": 2547300,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-14-green-v10.webp",
+      "sha256": "86bdedce4fd0191a1152797a8729c849e216a3f5d5acb009441ba0b910a770da",
+      "bytes": 2264700,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-14-left-v10.webp",
+      "sha256": "8d79f7a32701bcb4ab2b4a49b6761e74740d7fcdd1131fac55c595631e387294",
+      "bytes": 2352086,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-14-right-v10.webp",
+      "sha256": "abeec9f03113eacceafd7cf45754221a31284590d4532baa2a3f914ad9339320",
+      "bytes": 2332716,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-14-tee-v10.webp",
+      "sha256": "ac90716ba806f4e487b2cc54009bd60d28b99122a48c254d3afccd5b7b8eee69",
+      "bytes": 2583032,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-15-aerial-v10.webp",
+      "sha256": "a596bde9a01d950af39f9e4678979bbf830ea161be165d9fd51b303a3d5dbc29",
+      "bytes": 2522928,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-15-green-v10.webp",
+      "sha256": "4aee4098205d16d36cd08603a6bdc8d4088696ecae701e8fa29ece39073bcce7",
+      "bytes": 2351802,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-15-left-v10.webp",
+      "sha256": "102ba4ba83e1885fbff88db8b564a752a130cd3255e917be47856ed69e67b17d",
+      "bytes": 2380532,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-15-right-v10.webp",
+      "sha256": "9ead495a1497f609a46e066c60917f27f51c3f18e8cfffdce7ec8743d8ed9c07",
+      "bytes": 2371176,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-15-tee-v10.webp",
+      "sha256": "d2a8fe80f66f7ec8973ae892231fb4f1864772f6d362d8215e7488c68697135f",
+      "bytes": 2479868,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-16-aerial-v10.webp",
+      "sha256": "40026804441aea6b9e8e34cd8744fe1d9c7d243fa8bcbb9912ed4a590b88c0f9",
+      "bytes": 2507222,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-16-green-v10.webp",
+      "sha256": "8ac47f4c4a14c009c81f9069d03e9a0ef74bec24d0c29b6c41c92d43dbd37a9d",
+      "bytes": 2619624,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-16-left-v10.webp",
+      "sha256": "7c311854e07fad8b266382f9e419b2aaca9e506afb79e2038de43f3d5edd6772",
+      "bytes": 2462034,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-16-right-v10.webp",
+      "sha256": "09c3d66c5f47be6c20c5c734dedc7d12e317ccb0489c77f7f4b53cc93c7f2315",
+      "bytes": 2395544,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-16-tee-v10.webp",
+      "sha256": "bf84cd8896dfa8767e61ef675c243b0d631c0deaba7c89285c8bb4de2fa44533",
+      "bytes": 2527730,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-17-aerial-v11.webp",
+      "sha256": "45c7a10f553912b50d15e3ac4c555ae6ac6660f8fd7238b47cf9938ca4b9b1fe",
+      "bytes": 2285802,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-17-green-v11.webp",
+      "sha256": "43ad802bdbec3571bd4d8d0d0d9ef0d299af064fe8141f77f1e45c0c3a37b440",
+      "bytes": 2067312,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-17-left-v11.webp",
+      "sha256": "73b72786a520110ea47580f0ee25acfda419430aedff1f5d0531e0c09c4ea69e",
+      "bytes": 2152268,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-17-right-v11.webp",
+      "sha256": "a7e255f2300bdebcace4aadff1f7ae74b7cb94e3b6f534bdfd6d960a4a9278dc",
+      "bytes": 2175780,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-17-tee-v11.webp",
+      "sha256": "838221fe2da0c3c4f581d6f6b4ca617cbf27d9deaa6deb23de7d086ffd0a3eef",
+      "bytes": 2255198,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-18-aerial-v11.webp",
+      "sha256": "fa61c51d8e9ff980891e8311ce2aca442375e1e00a49707503f59a529ec8057b",
+      "bytes": 2114098,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-18-green-v11.webp",
+      "sha256": "ad37fd39cc427f1d3da5f42d50b934632f3e333e76bd07d58d2824159bd03733",
+      "bytes": 2033290,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-18-left-v11.webp",
+      "sha256": "cfaafc260b686b88a90e122b932f0016d88025254462a8aad02d6cccedafbc7b",
+      "bytes": 2204674,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-18-right-v11.webp",
+      "sha256": "1b289fbaf929b41ea221666581e8eea721eba0bcc0f38ab1241eeee4ca2b83fb",
+      "bytes": 2245486,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/hole-18-tee-v11.webp",
+      "sha256": "586b95052aa2a58ce79c21315fdebd987e181ae19664166d6c06c76b47225fec",
+      "bytes": 2267902,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/point-green-v09.png",
+      "sha256": "eb93bccdd75f7830cd54ad0a74861222d5f49f1d7166fdec153d26647f270f18",
+      "bytes": 2897335,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/point-left-v09.png",
+      "sha256": "91a80ff9fb7f12c185a94ccf843a4091cc02d2a039beda52b587eefaec7c4c4b",
+      "bytes": 2883687,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/point-right-v09.png",
+      "sha256": "6b4930225e685080f264385159e0cac26d5eaafef908eb33f8c40d5ef00d0783",
+      "bytes": 3150926,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/point-tee-v09.png",
+      "sha256": "d999310baeb2d1e32b60815c4483e549b0691037cf87e8e6176cc8a7873f199a",
+      "bytes": 3254518,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-01-tee-v2.webp",
+      "sha256": "ffd09f7fb4784bfa4ff02dabf095e01f2881d8dd9f879772fb6f6d98db940062",
+      "bytes": 537850,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-01-right-v2.webp",
+      "sha256": "29a0d3e3fe89bbdfab0f73661064bc668c8f18bfdb2ea26a9bff9d229240d43b",
+      "bytes": 299796,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-01-left-v2.webp",
+      "sha256": "ce62997dc0984401a22ea3fc048791c78ee5bc35048ff4570a9cd5797007cf5f",
+      "bytes": 304348,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-01-green-v2.webp",
+      "sha256": "0d65f87fef06f0586fb284809f04031e5bccabe0f70d7258a023988af7ae2240",
+      "bytes": 501056,
+      "hole": 1,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-02-tee-v2.webp",
+      "sha256": "dc409af9d7607deba670f901dce27743fa5990d227e20c6efe13293869915cda",
+      "bytes": 390572,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-02-right-v2.webp",
+      "sha256": "daafe14b81078170efa19cfd56e18b24ec02c8fb3c028f3d07d8e6e79fb7ddc1",
+      "bytes": 319334,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-02-left-v2.webp",
+      "sha256": "2da15e92474b5af6e967857ecc3fff22c6858b572623c0df0249fc7de973d00a",
+      "bytes": 342498,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-02-green-v2.webp",
+      "sha256": "52a6e06f72db1e6acce3158f250e22362fa37695fa41e15142d05d2f4adf8133",
+      "bytes": 363404,
+      "hole": 2,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-03-tee-v2.webp",
+      "sha256": "50039be63ccebdff14362bb8260d131a2b6bfac654032fca348dd77e7bf9fbaa",
+      "bytes": 318814,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-03-right-v2.webp",
+      "sha256": "90276f310cc9fc28e5116febf85a540c1bf8ee78017e7933b5186720dc3ffd9c",
+      "bytes": 314306,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-03-left-v2.webp",
+      "sha256": "622118b71926cbd04f8b16bfa9584766c6d2a79a5e3a8468b7f48bc967f9e87d",
+      "bytes": 318546,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-03-green-v2.webp",
+      "sha256": "dbcf00c258061682be1ed250b6dda3d9c0da517f24828144c23c79d1bc08d441",
+      "bytes": 314272,
+      "hole": 3,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-04-tee-v2.webp",
+      "sha256": "4c7c752331c649d6e08485e3809e3a0067207335be56b55df3c78fe4b42b7bca",
+      "bytes": 347854,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-04-right-v2.webp",
+      "sha256": "0426cd3359dd0566f4fc7d411795152974648b1e0137995182a766e492083e19",
+      "bytes": 296266,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-04-left-v2.webp",
+      "sha256": "3e72efb8d11dcc73c7f6e5307a0dcbb9d9d3833c0ad5d05f63eb544848df8368",
+      "bytes": 313546,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-04-green-v2.webp",
+      "sha256": "fa37117d9aa2a3f1a3a708ab520cdfd2d46cefaf3a2ae685695cb9b0e2de1376",
+      "bytes": 326554,
+      "hole": 4,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-05-tee-v2.webp",
+      "sha256": "82b60dc5fd3f98c711d9f8b792f4dee05eaea89891afcad08655a61c01756988",
+      "bytes": 403696,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-05-right-v2.webp",
+      "sha256": "86fc50967d63a4b8ff38bda47f8eebe77a4ac415f53466ea8fa41d235697d1b2",
+      "bytes": 392016,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-05-left-v2.webp",
+      "sha256": "151b1384a4cd6934025775d4189d5ba576f8b9224f2b4ef63437f47f3d9a0ad2",
+      "bytes": 386350,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-05-green-v2.webp",
+      "sha256": "34908dfe117509d2a53b0c18db427dac7b2554819c8a39747f373692dd6eb1f3",
+      "bytes": 359340,
+      "hole": 5,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-06-tee-v2.webp",
+      "sha256": "ddc651f813dba32f0a7d6dd6b56925a7bc951e243a345cfc704f8c06ebc6b450",
+      "bytes": 339352,
+      "hole": 6,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-06-right-v2.webp",
+      "sha256": "f41b190ccc566b593614564e210f2d92938f2f4d8a1acf5a007a091436ccd66e",
+      "bytes": 301966,
+      "hole": 6,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-06-left-v2.webp",
+      "sha256": "a677e4f778ca1b29446cd8c66c7c9c8288537a7b72fb96562b0df1b0bf13538f",
+      "bytes": 306998,
+      "hole": 6,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-06-green-v2.webp",
+      "sha256": "c90b6a0b0ba4a52bd2f6c5d0aeb324d6d0a0f24257c11ec39df2631fb41ba101",
+      "bytes": 360688,
+      "hole": 6,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-07-tee-v2.webp",
+      "sha256": "859a411c9b9d671227d357bd72f252a31596aa3a96204b02af4bf336795f2ba3",
+      "bytes": 363632,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-07-right-v2.webp",
+      "sha256": "3223d8da3f888694afa2c8e0547b9f800cbc5ad261b07e69edcee0fc7f0afcfb",
+      "bytes": 304594,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-07-left-v2.webp",
+      "sha256": "84d72c743ff2fa5bcaf14d520647d7d5c2b1f39db63961865230e90f3eb8b76c",
+      "bytes": 294724,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-07-green-v2.webp",
+      "sha256": "9dbff050eb634218d7096c354968ec173fb13e42f787f72bc178fa089d04ad9d",
+      "bytes": 240312,
+      "hole": 7,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-08-tee-v2.webp",
+      "sha256": "1b37431cbd1755f60bbfa2a813577f4e116cb13e73c98a7712b913488d0ec312",
+      "bytes": 356266,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-08-right-v2.webp",
+      "sha256": "0fe3322a4c71e283d63b2284b9b57c3804a6c81a0f5e5370b9ebcac4ab4ba7b9",
+      "bytes": 295784,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-08-left-v2.webp",
+      "sha256": "81da39e17cf25d807beb26d09d172505878abced0f1e61adae47acc4facc6991",
+      "bytes": 324752,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-08-green-v2.webp",
+      "sha256": "38afff16796b198788715fcc025d6795d351c9407bcabc896ececeacd697cccd",
+      "bytes": 352172,
+      "hole": 8,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-09-tee-v2.webp",
+      "sha256": "9efb9e65ebfabefe04afdf186f08f4dc368957959444c5eb052d041fee85fc14",
+      "bytes": 268162,
+      "hole": 9,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-09-right-v2.webp",
+      "sha256": "3a2baa7172bd210207adc57f94e5aceae8c16b01d74b671a17c55dba16c37c57",
+      "bytes": 266248,
+      "hole": 9,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-09-left-v2.webp",
+      "sha256": "6ea12238a9b0d713a07733294c7c2399f28c38c367806436bf5f0cc7f444882a",
+      "bytes": 235946,
+      "hole": 9,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-09-green-v2.webp",
+      "sha256": "a35d52d6ea3718ce6919823f341a4cc856731eaaad86103d2063c1b6072095fb",
+      "bytes": 303566,
+      "hole": 9,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-10-tee-v2.webp",
+      "sha256": "f5f73c1e3d7569a52c339b9f28a97e6ee46fe3ce931c43a0b645aa10eab5507f",
+      "bytes": 325492,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-10-right-v2.webp",
+      "sha256": "40a4ef340fb27d1342a3a43f5be2651d266a5d0d2fffc6b488ee9b4691fccf10",
+      "bytes": 286208,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-10-left-v2.webp",
+      "sha256": "6fbbeb9671ab541298fb6a459320f829a7160312d069ee5216d100ca9f101996",
+      "bytes": 297190,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-10-green-v2.webp",
+      "sha256": "14acb711f7b34810a71e8515bcbda03c881112993e28e567c87688f2ecfd6657",
+      "bytes": 310314,
+      "hole": 10,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-11-tee-v2.webp",
+      "sha256": "6650d402902a6dec4d9c2baa96e1f39d4a8dfab6cb75fd65e6634349d5a46758",
+      "bytes": 315156,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-11-right-v2.webp",
+      "sha256": "4aa1f2407dfde60e10ac19bae8301be2c77872551e9a9bba48b53166c34b1d4d",
+      "bytes": 298750,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-11-left-v2.webp",
+      "sha256": "65256053f1be207b9ade7a1001e099278d8c20a0d303b0d316ef65dcefbf5d92",
+      "bytes": 288756,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-11-green-v2.webp",
+      "sha256": "d0d28cf43180f150068227dd486a9e555897e55ab265f8b4d63511cd4beeba3a",
+      "bytes": 319460,
+      "hole": 11,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-12-tee-v2.webp",
+      "sha256": "dbeb11ec4dcdbd56d8edd5c3b0262f88e3481ab4b40a83ba719d04588b587d3d",
+      "bytes": 293638,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-12-right-v2.webp",
+      "sha256": "e667625ae9bd2945b6d10e6b9f1d2ee1987815c0d33ae2ef0e51057de2f39c08",
+      "bytes": 250158,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-12-left-v2.webp",
+      "sha256": "b76b3d1f5f188c422d9d4a00ece2364fb39605744a3737dd2c97dbb67e320cca",
+      "bytes": 301974,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-12-green-v2.webp",
+      "sha256": "51b86cdfca1cd3d62269b56c5f7883853c1ee91e66a54f98e3920c182218c5f8",
+      "bytes": 298830,
+      "hole": 12,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-13-tee-v2.webp",
+      "sha256": "4dbeac6ebb073b96323b3a4d30cfe430c8b68a6bfba1a99cb15fb8d206414293",
+      "bytes": 336610,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-13-right-v2.webp",
+      "sha256": "6edc6cc2a3b55e449cae47df53a49848de522e91266ab06e33d0eafb9f6a0f3e",
+      "bytes": 277488,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-13-left-v2.webp",
+      "sha256": "d6c38f14e734f44bfbda2c45bb70e7f4b5e9c222546455f5b364c42aacf19d64",
+      "bytes": 340806,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-13-green-v2.webp",
+      "sha256": "960aa2d42c2831012ac4f34562bce00632d5b1f71e18563c41c062847a7d6967",
+      "bytes": 347448,
+      "hole": 13,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-14-tee-v2.webp",
+      "sha256": "930808500c4fa9641e7ae8cc00b65a3279ba4e73d788f3a98d5df703726ee310",
+      "bytes": 330010,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-14-right-v2.webp",
+      "sha256": "f2ca0f9aa89146203bab37f4d113e0882e6423860a4ec90b1cef8bc684e56b75",
+      "bytes": 288510,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-14-left-v2.webp",
+      "sha256": "d9d027636738de6f82119137702940d7237e8a7f18929ec96fc378aff0e19148",
+      "bytes": 292024,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-14-green-v2.webp",
+      "sha256": "c977ea0037a70aef0c1b2ea0f7494864609f72f0cab7800116a9ad174d09efc1",
+      "bytes": 306218,
+      "hole": 14,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-15-tee-v2.webp",
+      "sha256": "834e724c63a71432f5440d9d3f173d7506d5702952afea350395e8712a4ab8b1",
+      "bytes": 333282,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-15-right-v2.webp",
+      "sha256": "8c44bc8da94244f19b314daa37d741ad0c0c65d55e6b547f966c71f1aac362a4",
+      "bytes": 318994,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-15-left-v2.webp",
+      "sha256": "467759677efe54eaf3e641613d2c34a842aec0b59813a2555faa6551ebcb9f7e",
+      "bytes": 334324,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-15-green-v2.webp",
+      "sha256": "0aa81725bc4bbdd7bcebed3962d0084cd8ef140ea0746cbddb6f4509cbfb6c88",
+      "bytes": 354538,
+      "hole": 15,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-16-tee-v2.webp",
+      "sha256": "45a6429aa43ea0e8fc41204cfb3a475fbdf21d5136fef154f08c5f4e6808b07e",
+      "bytes": 304242,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-16-right-v2.webp",
+      "sha256": "e0fd9a19bead82f18e01d87b22bfb743758c55a99093ab891c4d312b870dae40",
+      "bytes": 291040,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-16-left-v2.webp",
+      "sha256": "c3a51a7bd577f6e3cd29304f8c2786fe19b1fba8e62855c332ca1afe7c5e8ef3",
+      "bytes": 289110,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-16-green-v2.webp",
+      "sha256": "ae5e5d03199485c8631e252e1483925e6569ea4df752eb071eaf64d1aedbbae7",
+      "bytes": 236116,
+      "hole": 16,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-17-tee-v2.webp",
+      "sha256": "cda0094af9779a08ec615b099169b9c0bb553c737f526f2f3259aa1afee58ef7",
+      "bytes": 319946,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-17-right-v2.webp",
+      "sha256": "e86a13d18504102ef0cc1fdc5fe26b8ffd0c5e76d668ea6d8f2e4ebf74e787b1",
+      "bytes": 305436,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-17-left-v2.webp",
+      "sha256": "2fc506d5c0adc48ac37de1cc89584607cb290ffe761670652667a3c57444abfe",
+      "bytes": 319758,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-17-green-v2.webp",
+      "sha256": "85f78c263ffba7e65d3ceb75981e9643a104059314ab8b92eac8d5f6340a848e",
+      "bytes": 257966,
+      "hole": 17,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-18-tee-v2.webp",
+      "sha256": "02a4313c42faf3de31e31b511fe3ca100bbc35397668ecc30f13706e0901d8d5",
+      "bytes": 350244,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-18-right-v2.webp",
+      "sha256": "3513012ff7749b768a747f85ef146742f81823af33e6c105214c9a3421c42c93",
+      "bytes": 313974,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-18-left-v2.webp",
+      "sha256": "fd0edea78628ad9c9ae9ec38d8bae9bb4f3d1d351bc48ea88671fc9d3fa628ec",
+      "bytes": 281070,
+      "hole": 18,
+      "bundled": false
+    },
+    {
+      "path": "assets/royal-country-club/hole-18-green-v2.webp",
+      "sha256": "cc5d6b23a665050ee7e5cc47751bbb4d9048bed0304016d29aeb1c722558625c",
+      "bytes": 267346,
+      "hole": 18,
+      "bundled": false
+    }
+  ]
+}
