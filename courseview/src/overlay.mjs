@@ -13,8 +13,13 @@ const imageRoute=course=>{
  const tee=imagePoint(course?.points?.tee),green=imagePoint(course?.points?.green);
  if(!tee||!green||tee.y<=green.y)return null;
  const explicit=Array.isArray(course?.centerline)?course.centerline.map(imagePoint).filter(Boolean):[];
- const route=explicit.length>=2?explicit:[tee,green];
- return route.length>=2?route:null;
+ const waypoints=[tee,imagePoint(course?.points?.right),imagePoint(course?.points?.left),green].filter(Boolean);
+ const route=explicit.length>=2?explicit:waypoints;
+ if(route.length<2)return null;
+ const cumulative=[0];
+ for(let i=1;i<route.length;i++)cumulative.push(cumulative[i-1]+Math.hypot(route[i].x-route[i-1].x,route[i].y-route[i-1].y));
+ const total=cumulative.at(-1);
+ return total>0?{points:route,cumulative,total}:null;
 };
 /**
  * 独自生成の全体図に登録した、ティーからグリーンまでの折れ曲がった
@@ -24,16 +29,12 @@ const imageRoute=course=>{
 export function interpolateImageRoute(course,distanceRatio){
  const route=imageRoute(course);if(!route)return null;
  const ratio=Math.max(0,Math.min(1,Number.isFinite(distanceRatio)?distanceRatio:0));
- const targetY=route[0].y+(route[route.length-1].y-route[0].y)*ratio;
- let a=route[0],b=route[1];
- if(targetY<=route[route.length-1].y){a=route[route.length-2];b=route[route.length-1]}
- else if(targetY<route[0].y){
-  for(let i=1;i<route.length;i++){
-   if(targetY<=route[i-1].y&&targetY>=route[i].y){a=route[i-1];b=route[i];break}
-  }
- }
+ const target=route.total*ratio;
+ let index=route.points.length-1;
+ for(let i=1;i<route.cumulative.length;i++){if(target<=route.cumulative[i]){index=i;break;}}
+ const a=route.points[index-1],b=route.points[index],segment=route.cumulative[index]-route.cumulative[index-1];
  const dy=b.y-a.y,dx=b.x-a.x,len=Math.hypot(dx,dy)||1;
- const t=Math.max(0,Math.min(1,(targetY-a.y)/(dy||Number.EPSILON)));
+ const t=Math.max(0,Math.min(1,(target-route.cumulative[index-1])/(segment||Number.EPSILON)));
  return {x:a.x+dx*t,y:a.y+dy*t,rightX:-dy/len,rightY:dx/len};
 }
 export function verifiedImageOverlay(course){
