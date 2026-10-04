@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "version": "0.7.1",
+  "androidVersionCode": 24,
+  "sourceFingerprint": "986c41611ab098710197e2585f4e03a086fe8b47254ddceaac445a8ed7f3faf8",
+  "artifactFingerprint": "10002c30bf76878f1081a36b1f6115177aa28ac6211c74c81e7e98277787f8af",
+  "features": [
+    "home-course-round-strategy-flow",
+    "player-bag-management",
+    "golden-cross-18-holes",
+    "royal-country-club-18-holes",
+    "course-view-point-scenes",
+    "caddie-guidance",
+    "golden-cross-course-strategy",
+    "data-quality-disclosure"
+  ],
+  "preparedAt": "2026-10-04T14:42:56.823896+00:00"
+}
