@@ -41,6 +41,28 @@ export function interpolateImageRoute(course,distanceRatio){
  const t=Math.max(0,Math.min(1,(target-route.cumulative[index-1])/(segment||Number.EPSILON)));
  return {x:a.x+dx*t,y:a.y+dy*t,rightX:-dy/len,rightY:dx/len};
 }
+const fairwayPolygon=course=>{
+ const fairway=course?.fairway;
+ if(!fairway?.appliesToFairway||!Array.isArray(fairway.route)||fairway.route.length<2)return [];
+ const points=fairway.route.map(imagePoint).filter(Boolean);
+ if(points.length<2)return [];
+ const left=[],right=[];
+ points.forEach((p,index)=>{
+  const previous=points[Math.max(0,index-1)],next=points[Math.min(points.length-1,index+1)];
+  const dx=next.x-previous.x,dy=next.y-previous.y,len=Math.hypot(dx,dy)||1;
+  const width=Math.max(.006,Number(fairway.halfWidthRatio?.[index]??fairway.halfWidthRatio?.at?.(-1)??.05));
+  left.push([p.x-dy/len*width,p.y+dx/len*width]);
+  right.push([p.x+dy/len*width,p.y-dx/len*width]);
+ });
+ return [...left,...right.reverse()];
+};
+export function hasFairwayLayer(course){return fairwayPolygon(course).length>=3;}
+export function renderFairwayLayer(course){
+ const w=course?.art?.width,h=course?.art?.height,polygon=fairwayPolygon(course);
+ if(!Number.isFinite(w)||!Number.isFinite(h)||polygon.length<3)return '';
+ const points=polygon.map(([x,y])=>`${x*w},${y*h}`).join(' ');
+ return `<g class="fairway-layer"><title>CourseViewから読み取ったフェアウェイ帯（概略）</title><polygon data-fairway="true" points="${points}" fill="#d9ed7a" fill-opacity=".10" stroke="#efff9b" stroke-opacity=".86" stroke-width="6" stroke-dasharray="18 12"/></g>`;
+}
 export function verifiedImageOverlay(course){
  const o=course?.hazardOverlay;
  if(!o||o.image!==course.image||!course.imageSha256||o.assetSha256!==course.imageSha256||o.coordinateSpace!=='normalized_image'||o.scope!=='overview_only'||!Array.isArray(o.zones)||!o.zones.length||o.zones.length>30)return null;
