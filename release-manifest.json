@@ -1,18 +1,19 @@
 {
   "schemaVersion": 1,
-  "version": "0.7.2",
-  "androidVersionCode": 25,
-  "sourceFingerprint": "eaaeedc3e2281eefce15cc75638d4bb293d678c1be31c9bd8e4c5377591caafe",
-  "artifactFingerprint": "d7fa8ff4d3d42f760cc3eb0f2a309da026687c6c6a41de3fb1fc091655ded96d",
+  "version": "0.7.3",
+  "androidVersionCode": 26,
+  "sourceFingerprint": "64b9cd5d8c84602d77d5246bab1a44239e624312875daacefce35acd216587e1",
+  "artifactFingerprint": "d5df10634f26feebee390461f001664d978bad60b50ddfd5e6f917c9ec6a6088",
   "features": [
     "home-course-round-strategy-flow",
     "player-bag-management",
     "golden-cross-18-holes",
     "royal-country-club-18-holes",
+    "narita-golf-club-18-holes",
     "course-view-point-scenes",
     "caddie-guidance",
     "golden-cross-course-strategy",
     "data-quality-disclosure"
   ],
-  "preparedAt": "2026-10-05T02:37:13.596102+00:00"
+  "preparedAt": "2026-10-05T05:39:27.629219+00:00"
 }
