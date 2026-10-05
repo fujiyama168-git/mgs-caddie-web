@@ -1,10 +1,10 @@
 // 画像上の注釈は既存資料に基づく概略です。既存ハザード位置は
 // 「推奨点をここへ置かない」安全側比較に使えます。
 export const HAZARD_TYPES = Object.freeze({
- ob_attention:{name:'OB注意',color:'#bb2435'},
- one_penalty_attention:{name:'1ペナ注意',color:'#9b5a00'},
+ ob_attention:{name:'OB',color:'#bb2435'},
+ one_penalty_attention:{name:'1ペナ',color:'#9b5a00'},
  bunker:{name:'バンカー',color:'#775411'},
- water:{name:'池・水路',color:'#006b9a'}
+ water:{name:'池',color:'#006b9a'}
 });
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const point=p=>Array.isArray(p)&&p.length===2&&p.every(n=>typeof n==='number'&&Number.isFinite(n)&&n>=0&&n<=1);
@@ -74,8 +74,8 @@ export function renderHazardLayer(course){
  const w=course.art.width,h=course.art.height,o=verifiedImageOverlay(course);
  if(o){return o.zones.map(z=>{
   const color=HAZARD_TYPES[z.type].color,pts=z.points.map(([x,y])=>`${x*w},${y*h}`).join(' '),cx=z.points.reduce((a,p)=>a+p[0],0)/z.points.length*w,cy=z.points.reduce((a,p)=>a+p[1],0)/z.points.length*h,lx=z.labelAnchor[0]*w,ly=z.labelAnchor[1]*h;
-  return `<g class="hazard-mark" data-hazard-type="${z.type}"><title>${escape(z.label||HAZARD_TYPES[z.type].name)}：${escape(z.evidence??'位置・輪郭は概略')}</title><polygon points="${pts}" fill="${color}" fill-opacity="${z.type.endsWith('attention')?'.24':'.20'}" stroke="none"/>`+(z.label?`<path d="M${cx} ${cy} L${lx} ${ly}" fill="none" stroke="${color}" stroke-width="4" stroke-dasharray="9 7"/><text x="${lx}" y="${ly}" dy=".33em" text-anchor="middle" fill="${color}" class="hazard-label">${escape(z.label)}</text>`:'')+'</g>';
- }).join('')+(o.callouts??[]).map(z=>`<g class="hazard-mark" data-hazard-type="${z.type}"><title>${escape(z.label)}：${escape(z.evidence??'位置概略')}</title><text x="${z.labelAnchor[0]*w}" y="${z.labelAnchor[1]*h}" dy=".33em" text-anchor="middle" fill="${HAZARD_TYPES[z.type].color}" class="hazard-label">${escape(z.label)}</text></g>`).join('');}
+  return `<g class="hazard-mark" data-hazard-type="${z.type}"><title>${HAZARD_TYPES[z.type].name}</title><polygon points="${pts}" fill="${color}" fill-opacity="${z.type.endsWith('attention')?'.24':'.20'}" stroke="none"/><path d="M${cx} ${cy} L${lx} ${ly}" fill="none" stroke="${color}" stroke-width="4" stroke-dasharray="9 7"/><text x="${lx}" y="${ly}" dy=".33em" text-anchor="middle" fill="${color}" class="hazard-label">${HAZARD_TYPES[z.type].name}</text></g>`;
+ }).join('')+(o.callouts??[]).map(z=>`<g class="hazard-mark" data-hazard-type="${z.type}"><title>${HAZARD_TYPES[z.type].name}</title><text x="${z.labelAnchor[0]*w}" y="${z.labelAnchor[1]*h}" dy=".33em" text-anchor="middle" fill="${HAZARD_TYPES[z.type].color}" class="hazard-label">${HAZARD_TYPES[z.type].name}</text></g>`).join('');}
  return '<g class="ob-attention-bands">'+course.obZones.map(z=>`<path d="M${z.x1*w} ${z.y1*h} L${z.x2*w} ${z.y2*h}" style="stroke-width:${z.width*w}"/>`).join('')+'</g><g class="ob-attention-labels">'+course.obZones.map(z=>`<text x="${(z.x1+z.x2)*w/2}" y="${(z.y1+z.y2)*h/2}" text-anchor="middle">${escape(z.label)}</text>`).join('')+'</g>';
 }
 
@@ -133,13 +133,12 @@ export function renderPlayerLandingLayer(course,overlay){
  const coreRadius=Math.max(6,Math.min(9,w*.008));
  const labelX=clamp(cx,180,w-180);
  const labelY=clamp(cy-ry-34,34,h-34);
- const label=escape(overlay.label||'推奨着弾点'),club=escape(overlay.clubName||'推奨クラブ'),carry=escape(overlay.carryYd??'');
- const adjustment=resolved.adjusted?'既存資料の注意ゾーンを避ける側へ表示位置を補正しています。':'';
- return `<g class="player-landing-layer"><title>${label}：${club} / キャリー ${carry}yd。画像上の概略表示で、精密な測量地点ではありません。${adjustment}</title><ellipse class="player-landing-band" cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"/><line class="player-landing-axis" x1="${cx}" y1="${cy-ry}" x2="${cx}" y2="${cy+ry}"/><circle class="player-landing-point" cx="${cx}" cy="${cy}" r="${markerRadius}"/><circle class="player-landing-core" cx="${cx}" cy="${cy}" r="${coreRadius}"/><g class="player-landing-label"><rect x="${labelX-180}" y="${labelY-26}" width="360" height="52" rx="12"/><text x="${labelX}" y="${labelY+7}" text-anchor="middle">${label} / ${club} / ${carry}yd</text></g></g>`;
+ const label=escape(overlay.label||'着弾点'),club=escape(overlay.clubName||''),carry=escape(overlay.carryYd??'');
+ return `<g class="player-landing-layer"><title>${label}：${club} / ${carry}yd</title><ellipse class="player-landing-band" cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"/><line class="player-landing-axis" x1="${cx}" y1="${cy-ry}" x2="${cx}" y2="${cy+ry}"/><circle class="player-landing-point" cx="${cx}" cy="${cy}" r="${markerRadius}"/><circle class="player-landing-core" cx="${cx}" cy="${cy}" r="${coreRadius}"/><g class="player-landing-label"><rect x="${labelX-180}" y="${labelY-26}" width="360" height="52" rx="12"/><text x="${labelX}" y="${labelY+7}" text-anchor="middle">${label} / ${club} / ${carry}yd</text></g></g>`;
 }
 export const hasHazardLayer=c=>!!verifiedImageOverlay(c)||!!c.obZones.length;
 export function hazardLegend(course){
- const o=verifiedImageOverlay(course);if(!o)return '<strong>赤い帯：出典の表示をもとにした注意ゾーン</strong><p>ハザード位置は既存資料に基づく概略表示です。正確な測量境界線ではないため、現地の杭・白線とローカルルールを確認してください。</p>';
+ const o=verifiedImageOverlay(course);if(!o)return '';
  const types=[...new Set([...o.zones,...(o.callouts??[])].map(z=>z.type))];
- return '<strong>既存資料に基づく注意表示 / 位置・広さは概略</strong><div class="hazard-key">'+types.map(t=>`<span><i style="background:${HAZARD_TYPES[t].color}"></i>${HAZARD_TYPES[t].name}</span>`).join('')+'</div><p>ハザードの位置と種類は既存資料に基づき反映しています。塗りは精密な測量境界線ではなく、池・砂の輪郭や前後距離も目安です。現地の杭・白線とローカルルールを確認してください。</p>'+(types.includes('one_penalty_attention')?'<p>「1ペナ」は公式図の表記です。OBや現在のペナルティーエリアと同じ扱いとは確認していません。</p>':'')+'<p>全体画像専用の表示です。別視点Viewには座標を流用していません。</p>';
+ return '<div class="hazard-key">'+types.map(t=>`<span><i style="background:${HAZARD_TYPES[t].color}"></i>${HAZARD_TYPES[t].name}</span>`).join('')+'</div>';
 }
