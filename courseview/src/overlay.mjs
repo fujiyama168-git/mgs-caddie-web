@@ -128,7 +128,18 @@ export function renderPlayerLandingLayer(course,overlay){
  const baseX=clamp(route.x+route.rightX*visualOffset,.04,.96),baseY=clamp(route.y+route.rightY*visualOffset,.04,.96);
  const spreadX=clamp(typeof overlay.spreadXRatio==='number'&&Number.isFinite(overlay.spreadXRatio)?overlay.spreadXRatio:.035,.012,.16);
  const spreadY=clamp(typeof overlay.spreadYRatio==='number'&&Number.isFinite(overlay.spreadYRatio)?overlay.spreadYRatio:.025,.012,.12);
- const resolved=resolveLandingPoint(course,baseX,baseY,Math.max(.012,Math.min(.05,Math.max(spreadX,spreadY)*.75)),distance),cx=resolved.x*w,cy=resolved.y*h,rx=spreadX*w,ry=spreadY*h;
+ const resolved=resolveLandingPoint(course,baseX,baseY,Math.max(.012,Math.min(.05,Math.max(spreadX,spreadY)*.75)),distance);
+ const sections=Array.isArray(course?.landingSafeArea?.sections)?[...course.landingSafeArea.sections].filter(s=>Number.isFinite(s?.y)&&Number.isFinite(s?.left)&&Number.isFinite(s?.right)&&s.left<s.right).sort((a,b)=>a.y-b.y):[];
+ let safeX=resolved.x;
+ if(sections.length){
+  let low=sections[0],high=sections[sections.length-1];
+  if(resolved.y<=low.y)high=low;
+  else if(resolved.y>=high.y)low=high;
+  else for(let i=1;i<sections.length;i++){if(resolved.y<=sections[i].y){low=sections[i-1];high=sections[i];break}}
+  const t=high.y===low.y?0:(resolved.y-low.y)/(high.y-low.y),left=low.left+(high.left-low.left)*t,right=low.right+(high.right-low.right)*t;
+  safeX=clamp(safeX,left+.006,right-.006);
+ }
+ const cx=safeX*w,cy=resolved.y*h,rx=spreadX*w,ry=spreadY*h;
  const markerRadius=Math.max(24,Math.min(40,w*.036));
  const coreRadius=Math.max(6,Math.min(9,w*.008));
  const labelX=clamp(cx,180,w-180);
