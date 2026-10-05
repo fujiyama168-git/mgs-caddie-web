@@ -130,16 +130,16 @@ export function renderPlayerLandingLayer(course,overlay){
  const spreadY=clamp(typeof overlay.spreadYRatio==='number'&&Number.isFinite(overlay.spreadYRatio)?overlay.spreadYRatio:.025,.012,.12);
  const resolved=resolveLandingPoint(course,baseX,baseY,Math.max(.012,Math.min(.05,Math.max(spreadX,spreadY)*.75)),distance);
  const sections=Array.isArray(course?.landingSafeArea?.sections)?[...course.landingSafeArea.sections].filter(s=>Number.isFinite(s?.y)&&Number.isFinite(s?.left)&&Number.isFinite(s?.right)&&s.left<s.right).sort((a,b)=>a.y-b.y):[];
- let safeX=resolved.x;
+ let safeX=resolved.x,safeY=resolved.y;
  if(sections.length){
-  let low=sections[0],high=sections[sections.length-1];
-  if(resolved.y<=low.y)high=low;
-  else if(resolved.y>=high.y)low=high;
-  else for(let i=1;i<sections.length;i++){if(resolved.y<=sections[i].y){low=sections[i-1];high=sections[i];break}}
-  const t=high.y===low.y?0:(resolved.y-low.y)/(high.y-low.y),left=low.left+(high.left-low.left)*t,right=low.right+(high.right-low.right)*t;
-  safeX=clamp(safeX,left+.006,right-.006);
+  const exclusions=Array.isArray(course?.landingSafeArea?.exclusions)?course.landingSafeArea.exclusions:[];
+  const intervalsAt=y=>{let low=sections[0],high=sections[sections.length-1];if(y<=low.y)high=low;else if(y>=high.y)low=high;else for(let i=1;i<sections.length;i++){if(y<=sections[i].y){low=sections[i-1];high=sections[i];break}}const t=high.y===low.y?0:(y-low.y)/(high.y-low.y),left=low.left+(high.left-low.left)*t,right=low.right+(high.right-low.right)*t,margin=Math.min(.006,(right-left)*.2);let intervals=[[left+margin,right-margin]];for(const z of exclusions){if(!Number.isFinite(z?.minX)||!Number.isFinite(z?.maxX)||!Number.isFinite(z?.minY)||!Number.isFinite(z?.maxY)||y<z.minY-margin||y>z.maxY+margin)continue;const next=[];for(const [a,b]of intervals){if(z.maxX+margin<=a||z.minX-margin>=b){next.push([a,b]);continue}if(z.minX-margin>a)next.push([a,z.minX-margin]);if(z.maxX+margin<b)next.push([z.maxX+margin,b])}intervals=next}return intervals.filter(([a,b])=>a<=b)};
+  let intervals=intervalsAt(safeY);
+  for(let step=1;!intervals.length&&step<=40;step++){const delta=step*.005,near=[resolved.y-delta,resolved.y+delta].filter(y=>y>=.04&&y<=.96);for(const y of near){const found=intervalsAt(y);if(found.length){safeY=y;intervals=found;break}}}
+  const candidates=intervals.map(([a,b])=>clamp(safeX,a,b));
+  safeX=candidates.length?candidates.sort((a,b)=>Math.abs(a-safeX)-Math.abs(b-safeX))[0]:safeX;
  }
- const cx=safeX*w,cy=resolved.y*h,rx=spreadX*w,ry=spreadY*h;
+ const cx=safeX*w,cy=safeY*h,rx=spreadX*w,ry=spreadY*h;
  const markerRadius=Math.max(24,Math.min(40,w*.036));
  const coreRadius=Math.max(6,Math.min(9,w*.008));
  const labelX=clamp(cx,180,w-180);

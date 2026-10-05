@@ -14,6 +14,14 @@ export function validateCourse(c){
  for(const k of POINT_KEYS){const p=c.points?.[k];bad(p&&text(p.label,100)&&text(p.note)&&finite(p.x,0,1)&&finite(p.y,0,1),'points.'+k);asset(c.scenes?.[k],'scenes.'+k)}
  bad(Array.isArray(c.obZones)&&c.obZones.length<=30,'obZones');
  for(const z of (Array.isArray(c.obZones)?c.obZones:[])){bad(z&&text(z.id,100)&&text(z.label,100)&&['x1','y1','x2','y2'].every(k=>finite(z[k],0,1))&&finite(z.width,0.001,1),'obZone')}
+ if(c.landingSafeArea){
+  const sections=c.landingSafeArea.sections,exclusions=c.landingSafeArea.exclusions??[];
+  bad(Array.isArray(sections)&&sections.length>=2&&sections.length<=100,'landingSafeArea.sections');
+  for(const s of(Array.isArray(sections)?sections:[]))bad(s&&finite(s.y,0,1)&&finite(s.left,0,1)&&finite(s.right,0,1)&&s.left<s.right,'landingSafeArea.section');
+  bad(Array.isArray(exclusions)&&exclusions.length<=100,'landingSafeArea.exclusions');
+  for(const z of(Array.isArray(exclusions)?exclusions:[]))bad(z&&['water','trees','bunker'].includes(z.type)&&finite(z.minX,0,1)&&finite(z.maxX,0,1)&&finite(z.minY,0,1)&&finite(z.maxY,0,1)&&z.minX<z.maxX&&z.minY<z.maxY,'landingSafeArea.exclusion');
+  if(c.landingSafeArea.green){const g=c.landingSafeArea.green;bad(finite(g.cx,0,1)&&finite(g.cy,0,1)&&finite(g.rx,.001,1)&&finite(g.ry,.001,1),'landingSafeArea.green')}
+ }
  for(const key of ['sourceCredit','provenance']){if(c[key]){try{safeURL(c[key].url)}catch{errors.push(key+'.url')}}}
  return errors;
 }
