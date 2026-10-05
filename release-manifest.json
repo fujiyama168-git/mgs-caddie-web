@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "version": "0.7.3",
-  "androidVersionCode": 26,
-  "sourceFingerprint": "64b9cd5d8c84602d77d5246bab1a44239e624312875daacefce35acd216587e1",
-  "artifactFingerprint": "d5df10634f26feebee390461f001664d978bad60b50ddfd5e6f917c9ec6a6088",
+  "version": "0.7.4",
+  "androidVersionCode": 27,
+  "sourceFingerprint": "28ed4b9977f5c44426151615971d06f09c3ae0c979f45ff137d2ad89fa739201",
+  "artifactFingerprint": "a6e23852792ec65165e833db7d730dbd634387c4a3574b68dec0b1922fe21980",
   "features": [
     "home-course-round-strategy-flow",
     "player-bag-management",
@@ -15,5 +15,5 @@
     "golden-cross-course-strategy",
     "data-quality-disclosure"
   ],
-  "preparedAt": "2026-10-05T05:39:27.629219+00:00"
+  "preparedAt": "2026-10-05T07:58:13.150423+00:00"
 }
