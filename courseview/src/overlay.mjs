@@ -125,13 +125,14 @@ export function renderPlayerLandingLayer(course,overlay){
  // 表示上の左右差は、曲がり角を含む局所的なフェアウェイ軸へ適用する。
  // 画像は概略図なので、外側へ大きく飛ばして林側へ表示しない。
  const visualOffset=clamp(offset,-.08,.08);
- const baseX=clamp(route.x+route.rightX*visualOffset,.04,.96),baseY=clamp(route.y+route.rightY*visualOffset,.04,.96);
+ const hasFinal=Number.isFinite(overlay.landingXRatio)&&Number.isFinite(overlay.landingYRatio);
+ const baseX=hasFinal?clamp(overlay.landingXRatio,.04,.96):clamp(route.x+route.rightX*visualOffset,.04,.96),baseY=hasFinal?clamp(overlay.landingYRatio,.04,.96):clamp(route.y+route.rightY*visualOffset,.04,.96);
  const spreadX=clamp(typeof overlay.spreadXRatio==='number'&&Number.isFinite(overlay.spreadXRatio)?overlay.spreadXRatio:.035,.012,.16);
  const spreadY=clamp(typeof overlay.spreadYRatio==='number'&&Number.isFinite(overlay.spreadYRatio)?overlay.spreadYRatio:.025,.012,.12);
- const resolved=resolveLandingPoint(course,baseX,baseY,Math.max(.012,Math.min(.05,Math.max(spreadX,spreadY)*.75)),distance);
+ const resolved=hasFinal?{x:baseX,y:baseY,adjusted:true}:resolveLandingPoint(course,baseX,baseY,Math.max(.012,Math.min(.05,Math.max(spreadX,spreadY)*.75)),distance);
  const sections=Array.isArray(course?.landingSafeArea?.sections)?[...course.landingSafeArea.sections].filter(s=>Number.isFinite(s?.y)&&Number.isFinite(s?.left)&&Number.isFinite(s?.right)&&s.left<s.right).sort((a,b)=>a.y-b.y):[];
  let safeX=resolved.x,safeY=resolved.y;
- if(sections.length){
+ if(sections.length&&!hasFinal){
   const exclusions=Array.isArray(course?.landingSafeArea?.exclusions)?course.landingSafeArea.exclusions:[];
   const intervalsAt=y=>{let low=sections[0],high=sections[sections.length-1];if(y<=low.y)high=low;else if(y>=high.y)low=high;else for(let i=1;i<sections.length;i++){if(y<=sections[i].y){low=sections[i-1];high=sections[i];break}}const t=high.y===low.y?0:(y-low.y)/(high.y-low.y),left=low.left+(high.left-low.left)*t,right=low.right+(high.right-low.right)*t,margin=Math.min(.006,(right-left)*.2);let intervals=[[left+margin,right-margin]];for(const z of exclusions){if(!Number.isFinite(z?.minX)||!Number.isFinite(z?.maxX)||!Number.isFinite(z?.minY)||!Number.isFinite(z?.maxY)||y<z.minY-margin||y>z.maxY+margin)continue;const next=[];for(const [a,b]of intervals){if(z.maxX+margin<=a||z.minX-margin>=b){next.push([a,b]);continue}if(z.minX-margin>a)next.push([a,z.minX-margin]);if(z.maxX+margin<b)next.push([z.maxX+margin,b])}intervals=next}return intervals.filter(([a,b])=>a<=b)};
   let intervals=intervalsAt(safeY);

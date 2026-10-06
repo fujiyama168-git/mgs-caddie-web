@@ -19,7 +19,7 @@ export function validateCourse(c){
   bad(Array.isArray(sections)&&sections.length>=2&&sections.length<=100,'landingSafeArea.sections');
   for(const s of(Array.isArray(sections)?sections:[]))bad(s&&finite(s.y,0,1)&&finite(s.left,0,1)&&finite(s.right,0,1)&&s.left<s.right,'landingSafeArea.section');
   bad(Array.isArray(exclusions)&&exclusions.length<=100,'landingSafeArea.exclusions');
-  for(const z of(Array.isArray(exclusions)?exclusions:[]))bad(z&&['water','trees','bunker'].includes(z.type)&&finite(z.minX,0,1)&&finite(z.maxX,0,1)&&finite(z.minY,0,1)&&finite(z.maxY,0,1)&&z.minX<z.maxX&&z.minY<z.maxY,'landingSafeArea.exclusion');
+  for(const z of(Array.isArray(exclusions)?exclusions:[]))bad(z&&['water','trees','bunker','cartpath'].includes(z.type)&&finite(z.minX,0,1)&&finite(z.maxX,0,1)&&finite(z.minY,0,1)&&finite(z.maxY,0,1)&&z.minX<z.maxX&&z.minY<z.maxY,'landingSafeArea.exclusion');
   if(c.landingSafeArea.green){const g=c.landingSafeArea.green;bad(finite(g.cx,0,1)&&finite(g.cy,0,1)&&finite(g.rx,.001,1)&&finite(g.ry,.001,1),'landingSafeArea.green')}
  }
  for(const key of ['sourceCredit','provenance']){if(c[key]){try{safeURL(c[key].url)}catch{errors.push(key+'.url')}}}
