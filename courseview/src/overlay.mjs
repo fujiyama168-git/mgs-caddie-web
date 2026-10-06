@@ -30,16 +30,23 @@ const imageRoute=course=>{
  * フェアウェイ中心線を返す。ティーとグリーンの直線だけを使うと、
  * ドッグレッグの途中で着弾点が林へ飛ぶため、曲がり角の要点座標を通す。
  */
-export function interpolateImageRoute(course,distanceRatio){
+function routePosition(course,distanceRatio){
  const route=imageRoute(course);if(!route)return null;
  const ratio=Math.max(0,Math.min(1,Number.isFinite(distanceRatio)?distanceRatio:0));
  const target=route.total*ratio;
  let index=route.points.length-1;
  for(let i=1;i<route.cumulative.length;i++){if(target<=route.cumulative[i]){index=i;break;}}
  const a=route.points[index-1],b=route.points[index],segment=route.cumulative[index]-route.cumulative[index-1];
- const dy=b.y-a.y,dx=b.x-a.x,len=Math.hypot(dx,dy)||1;
+ const dy=b.y-a.y,dx=b.x-a.x;
  const t=Math.max(0,Math.min(1,(target-route.cumulative[index-1])/(segment||Number.EPSILON)));
- return {x:a.x+dx*t,y:a.y+dy*t,rightX:-dy/len,rightY:dx/len};
+ return {x:a.x+dx*t,y:a.y+dy*t};
+}
+export function interpolateImageRoute(course,distanceRatio){
+ const ratio=Math.max(0,Math.min(1,Number.isFinite(distanceRatio)?distanceRatio:0));
+ const point=routePosition(course,ratio),before=routePosition(course,Math.max(0,ratio-.08)),after=routePosition(course,Math.min(1,ratio+.08));
+ if(!point||!before||!after)return null;
+ const dx=after.x-before.x,dy=after.y-before.y,len=Math.hypot(dx,dy)||1;
+ return {...point,rightX:-dy/len,rightY:dx/len};
 }
 const fairwayPolygon=course=>{
  const fairway=course?.fairway;
@@ -113,9 +120,28 @@ export function resolveLandingPoint(course,baseX,baseY,margin,distanceRatio){
  let best={x:baseX,y:baseY,adjusted:true},bestDistance=-1;for(let ix=4;ix<=24;ix++){for(let iy=4;iy<=24;iy++){const x=ix/25,y=iy/25,d=Math.min(...zones.map(z=>polygonDistance(x,y,z.points)));if(d>bestDistance){best={x,y,adjusted:true};bestDistance=d;}}}return best;
 }
 
-export function renderPlayerLandingLayer(course,overlay){
+const currentMetricShot=(course,overlay)=>{
+ const metric=overlay?.metric,expected=overlay?.metricContext,actual=metric?.context;
+ const samePoint=(a,b)=>a&&b&&Math.abs(a.eastM-b.eastM)<1e-8&&Math.abs(a.northM-b.northM)<1e-8;
+ if(metric?.mode!=='calibrated'||!expected||!actual)return null;
+ if(actual.overviewImage!==expected.overviewImage||actual.overviewSha256!==expected.overviewSha256||!samePoint(actual.origin,expected.origin)||!samePoint(actual.aim,expected.aim))return null;
+ if(course?.image!==expected.overviewImage||course?.imageSha256!==expected.overviewSha256)return null;
+ return metric;
+};
+const renderMetricShotLayer=(course,metric)=>{
+ const w=course?.art?.width,h=course?.art?.height,valid=p=>p&&Number.isFinite(p.x)&&Number.isFinite(p.y);
+ if(!Number.isFinite(w)||!Number.isFinite(h)||!valid(metric?.line?.origin)||!valid(metric?.line?.end)||!valid(metric?.carry?.point)||!valid(metric?.total?.point))return '';
+ const xy=p=>({x:p.x*w,y:p.y*h}),origin=xy(metric.line.origin),end=xy(metric.line.end),carry=xy(metric.carry.point),total=xy(metric.total.point);
+ const ticks=(metric.ticks??[]).filter(t=>valid(t?.point)&&Number.isFinite(t?.distanceM)).map(t=>{const p=xy(t.point);return `<g class="metric-tick"><circle cx="${p.x}" cy="${p.y}" r="7"/><text x="${p.x+12}" y="${p.y-10}">${escape(Math.round(t.distanceM))}m</text></g>`}).join('');
+ const green=metric.greenFront&&valid(metric.greenFront.point)?(()=>{const p=xy(metric.greenFront.point);return `<g class="metric-green-front"><circle cx="${p.x}" cy="${p.y}" r="9"/><text x="${p.x+12}" y="${p.y-10}">${escape(Math.round(metric.greenFront.distanceM))}m</text></g>`})():'';
+ return `<g class="metric-shot-layer" data-unit="m" data-display-status="${metric.displayStatus==='partially_offscreen'?'partially_offscreen':'in_frame'}"><line x1="${origin.x}" y1="${origin.y}" x2="${end.x}" y2="${end.y}"/>${ticks}<circle class="metric-carry" cx="${carry.x}" cy="${carry.y}" r="11"/><circle class="metric-total" cx="${total.x}" cy="${total.y}" r="13"/>${green}</g>`;
+};
+
+function renderPlayerLandingLayerInternal(course,overlay){
  const w=course?.art?.width,h=course?.art?.height;
  if(!Number.isFinite(w)||!Number.isFinite(h)||!overlay||typeof overlay!=='object')return '';
+ const metric=currentMetricShot(course,overlay);
+ if(metric)return renderMetricShotLayer(course,metric);
  const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
  const ratio=n=>typeof n==='number'&&Number.isFinite(n)?clamp(n,0,1):null;
  const distance=ratio(overlay.distanceRatio),offset=typeof overlay.lateralOffsetRatio==='number'&&Number.isFinite(overlay.lateralOffsetRatio)?clamp(overlay.lateralOffsetRatio,-.16,.16):0;
@@ -124,15 +150,26 @@ export function renderPlayerLandingLayer(course,overlay){
  if(!route)return '';
  // 表示上の左右差は、曲がり角を含む局所的なフェアウェイ軸へ適用する。
  // 画像は概略図なので、外側へ大きく飛ばして林側へ表示しない。
- const visualOffset=clamp(offset,-.08,.08);
+ const physicalOffset=Number.isFinite(overlay.modelLateralM)&&Number.isFinite(overlay.routeMetresPerImageUnit)&&overlay.routeMetresPerImageUnit>0?overlay.modelLateralM/overlay.routeMetresPerImageUnit:null;
+ const frameCenterOffset=Number.isFinite(overlay.frameCenterOffsetM)&&Number.isFinite(overlay.routeMetresPerImageUnit)&&overlay.routeMetresPerImageUnit>0?overlay.frameCenterOffsetM/overlay.routeMetresPerImageUnit:0;
+ const physicalSections=course.landingSafeArea?.sections??[];
+ let nearestSection=null;
+ if(physicalSections.length&&route.y>=physicalSections[0].y&&route.y<=physicalSections[physicalSections.length-1].y){let upper=1;while(upper<physicalSections.length&&physicalSections[upper].y<route.y)upper++;const low=physicalSections[Math.max(0,upper-1)],high=physicalSections[Math.min(upper,physicalSections.length-1)],t=high.y===low.y?0:(route.y-low.y)/(high.y-low.y);nearestSection={y:route.y,left:low.left+(high.left-low.left)*t,right:low.right+(high.right-low.right)*t};}
+ const localHalfWidth=nearestSection?Math.max(0,(nearestSection.right-nearestSection.left)/2):null;
+ const visualOffset=physicalOffset??offset;
+ const frameVisualOffset=frameCenterOffset;
  const hasFinal=Number.isFinite(overlay.landingXRatio)&&Number.isFinite(overlay.landingYRatio);
- const baseX=hasFinal?clamp(overlay.landingXRatio,.04,.96):clamp(route.x+route.rightX*visualOffset,.04,.96),baseY=hasFinal?clamp(overlay.landingYRatio,.04,.96):clamp(route.y+route.rightY*visualOffset,.04,.96);
+ const combinedOffset=physicalOffset??frameVisualOffset+visualOffset;
+ const modelPoint=Number.isFinite(overlay.modelLateralM);
+ const computedX=route.x+route.rightX*combinedOffset,computedY=route.y+route.rightY*combinedOffset;
+ const baseX=hasFinal?(modelPoint?overlay.landingXRatio:clamp(overlay.landingXRatio,.04,.96)):(modelPoint?computedX:clamp(computedX,.04,.96)),baseY=hasFinal?(modelPoint?overlay.landingYRatio:clamp(overlay.landingYRatio,.04,.96)):(modelPoint?computedY:clamp(computedY,.04,.96));
  const spreadX=clamp(typeof overlay.spreadXRatio==='number'&&Number.isFinite(overlay.spreadXRatio)?overlay.spreadXRatio:.035,.012,.16);
  const spreadY=clamp(typeof overlay.spreadYRatio==='number'&&Number.isFinite(overlay.spreadYRatio)?overlay.spreadYRatio:.025,.012,.12);
- const resolved=hasFinal?{x:baseX,y:baseY,adjusted:true}:resolveLandingPoint(course,baseX,baseY,Math.max(.012,Math.min(.05,Math.max(spreadX,spreadY)*.75)),distance);
+ // Safety geometry is advisory; never move the analyzed landing after simulation.
+ const resolved={x:baseX,y:baseY,adjusted:false};
  const sections=Array.isArray(course?.landingSafeArea?.sections)?[...course.landingSafeArea.sections].filter(s=>Number.isFinite(s?.y)&&Number.isFinite(s?.left)&&Number.isFinite(s?.right)&&s.left<s.right).sort((a,b)=>a.y-b.y):[];
  let safeX=resolved.x,safeY=resolved.y;
- if(sections.length&&!hasFinal){
+ if(false&&sections.length&&!hasFinal){
   const exclusions=Array.isArray(course?.landingSafeArea?.exclusions)?course.landingSafeArea.exclusions:[];
   const intervalsAt=y=>{let low=sections[0],high=sections[sections.length-1];if(y<=low.y)high=low;else if(y>=high.y)low=high;else for(let i=1;i<sections.length;i++){if(y<=sections[i].y){low=sections[i-1];high=sections[i];break}}const t=high.y===low.y?0:(y-low.y)/(high.y-low.y),left=low.left+(high.left-low.left)*t,right=low.right+(high.right-low.right)*t,margin=Math.min(.006,(right-left)*.2);let intervals=[[left+margin,right-margin]];for(const z of exclusions){if(!Number.isFinite(z?.minX)||!Number.isFinite(z?.maxX)||!Number.isFinite(z?.minY)||!Number.isFinite(z?.maxY)||y<z.minY-margin||y>z.maxY+margin)continue;const next=[];for(const [a,b]of intervals){if(z.maxX+margin<=a||z.minX-margin>=b){next.push([a,b]);continue}if(z.minX-margin>a)next.push([a,z.minX-margin]);if(z.maxX+margin<b)next.push([z.maxX+margin,b])}intervals=next}return intervals.filter(([a,b])=>a<=b)};
   let intervals=intervalsAt(safeY);
@@ -147,6 +184,10 @@ export function renderPlayerLandingLayer(course,overlay){
  const labelY=clamp(cy-ry-34,34,h-34);
  const label=escape(overlay.label||'着弾点'),club=escape(overlay.clubName||''),carry=escape(overlay.carryYd??'');
  return `<g class="player-landing-layer"><title>${label}：${club} / ${carry}yd</title><ellipse class="player-landing-band" cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"/><line class="player-landing-axis" x1="${cx}" y1="${cy-ry}" x2="${cx}" y2="${cy+ry}"/><circle class="player-landing-point" cx="${cx}" cy="${cy}" r="${markerRadius}"/><circle class="player-landing-core" cx="${cx}" cy="${cy}" r="${coreRadius}"/><g class="player-landing-label"><rect x="${labelX-180}" y="${labelY-26}" width="360" height="52" rx="12"/><text x="${labelX}" y="${labelY+7}" text-anchor="middle">${label} / ${club} / ${carry}yd</text></g></g>`;
+}
+export function renderPlayerLandingLayer(course,overlay){
+ const svg=renderPlayerLandingLayerInternal(course,overlay);
+ return svg.startsWith('<g class="player-landing-layer"')?svg.replace('<g class="player-landing-layer"','<g class="player-landing-layer" data-distance-mode="approximate"'):svg;
 }
 export const hasHazardLayer=c=>!!verifiedImageOverlay(c)||!!c.obZones.length;
 export function hazardLegend(course){
