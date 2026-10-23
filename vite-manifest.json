@@ -1,0 +1,123 @@
+{
+  "_elevationReview-DX4KujPI.js": {
+    "file": "assets/elevationReview-DX4KujPI.js",
+    "name": "elevationReview"
+  },
+  "_jsx-runtime-BbMigFPA.js": {
+    "file": "assets/jsx-runtime-BbMigFPA.js",
+    "name": "jsx-runtime"
+  },
+  "_playerModelStore-b1f1KIsf.js": {
+    "file": "assets/playerModelStore-b1f1KIsf.js",
+    "name": "playerModelStore"
+  },
+  "_store-BjDoKEky.js": {
+    "file": "assets/store-BjDoKEky.js",
+    "name": "store",
+    "imports": [
+      "_jsx-runtime-BbMigFPA.js"
+    ]
+  },
+  "_store-DhnBLpeF.js": {
+    "file": "assets/store-DhnBLpeF.js",
+    "name": "store",
+    "imports": [
+      "_store-BjDoKEky.js"
+    ]
+  },
+  "_styles-BjHH01aa.js": {
+    "file": "assets/styles-BjHH01aa.js",
+    "name": "styles",
+    "css": [
+      "assets/styles-C_310pAR.css"
+    ]
+  },
+  "_styles-C_310pAR.css": {
+    "file": "assets/styles-C_310pAR.css",
+    "src": "_styles-C_310pAR.css"
+  },
+  "cid-review.html": {
+    "file": "assets/cidReview-BDsbHX1z.js",
+    "name": "cidReview",
+    "src": "cid-review.html",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-BbMigFPA.js",
+      "_elevationReview-DX4KujPI.js"
+    ],
+    "css": [
+      "assets/cidReview-Dln32XxT.css"
+    ]
+  },
+  "course-selection.html": {
+    "file": "assets/courseSelection-Epb2YYmC.js",
+    "name": "courseSelection",
+    "src": "course-selection.html",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-BbMigFPA.js",
+      "_store-BjDoKEky.js",
+      "_styles-BjHH01aa.js"
+    ],
+    "css": [
+      "assets/courseSelection-BbMl5RM-.css"
+    ]
+  },
+  "index.html": {
+    "file": "assets/home-DeA540ap.js",
+    "name": "home",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-BbMigFPA.js",
+      "_store-BjDoKEky.js",
+      "_styles-BjHH01aa.js"
+    ],
+    "css": [
+      "assets/home-ePeVRZZG.css"
+    ]
+  },
+  "management.html": {
+    "file": "assets/management-B23lANGg.js",
+    "name": "management",
+    "src": "management.html",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-BbMigFPA.js",
+      "_store-BjDoKEky.js",
+      "_playerModelStore-b1f1KIsf.js"
+    ],
+    "css": [
+      "assets/management-BVqH5yNz.css"
+    ]
+  },
+  "round-settings.html": {
+    "file": "assets/roundSettings-Cli9Z_8A.js",
+    "name": "roundSettings",
+    "src": "round-settings.html",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-BbMigFPA.js",
+      "_store-BjDoKEky.js",
+      "_styles-BjHH01aa.js",
+      "_store-DhnBLpeF.js"
+    ],
+    "css": [
+      "assets/roundSettings-DXYCP3oY.css"
+    ]
+  },
+  "strategy.html": {
+    "file": "assets/strategy-DKwdk79U.js",
+    "name": "strategy",
+    "src": "strategy.html",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-BbMigFPA.js",
+      "_store-BjDoKEky.js",
+      "_styles-BjHH01aa.js",
+      "_store-DhnBLpeF.js",
+      "_elevationReview-DX4KujPI.js",
+      "_playerModelStore-b1f1KIsf.js"
+    ]
+  }
+}
