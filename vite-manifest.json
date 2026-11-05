@@ -15,7 +15,8 @@
     "file": "assets/store-BjDoKEky.js",
     "name": "store",
     "imports": [
-      "_jsx-runtime-BbMigFPA.js"
+      "_jsx-runtime-BbMigFPA.js",
+      "_mgs-v1-core.js"
     ]
   },
   "_store-DhnBLpeF.js": {
@@ -119,5 +120,9 @@
       "_elevationReview-DX4KujPI.js",
       "_playerModelStore-b1f1KIsf.js"
     ]
+  },
+  "_mgs-v1-core.js": {
+    "file": "assets/mgs-v1-core.js",
+    "name": "mgs-v1-core"
   }
 }
