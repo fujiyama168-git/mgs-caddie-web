@@ -2,7 +2,7 @@
 // Version: 2026-11-05
 export const MGS_V1_MODEL_VERSION = "mgs-v1-foundation-2026-11-05";
 export const ELEVATION_MODEL_VERSION = "elevation-class-v1";
-export const ELEVATION_FORMULA_VERSION = "metric-1to1-provisional-v1";
+export const ELEVATION_FORMULA_VERSION = "slope-0.55m-per-m-v1";
 export const WIDTH_MODEL_VERSION = "width-v2";
 
 const YD_PER_M = 1.0936132983;
@@ -113,10 +113,10 @@ export function adjustDistanceForElevation(distanceYd, segment, formulaId = ELEV
   const model = finite(segment?.model_delta_m) ? segment.model_delta_m : 0;
   const deltaM = measured ?? model;
 
-  // Provisional public rule-of-thumb adapter:
-  // ~1 metre of vertical change ~= 1 metre of playing-distance adjustment.
-  // Kept in a versioned formula registry so a validated trajectory formula can replace it.
-  const adjustmentYd = deltaM * YD_PER_M;
+  // Calibrated V1 heuristic. Garmin's public example (106yd, 12ft uphill -> 108yd)
+  // is approximately 0.55 metres of playing-distance adjustment per metre of height.
+  // This is NOT claimed to be Garmin's proprietary formula.
+  const adjustmentYd = deltaM * 0.55 * YD_PER_M;
   return Object.freeze({
     input_distance_yd: round1(input),
     input_delta_m: round1(deltaM),
@@ -149,8 +149,8 @@ export function adjustCarryLandingMeters(flatCarryM, segment, formulaId = ELEVAT
     delta_source: measured !== null ? "measured" : "class_model",
     formula_id: formulaId,
     formula_version: ELEVATION_FORMULA_VERSION,
-    adjustment_m: round1(deltaM),
-    adjusted_landing_m: round1(Math.max(0, flatCarryM - deltaM)),
+    adjustment_m: round1(deltaM * 0.55),
+    adjusted_landing_m: round1(Math.max(0, flatCarryM - deltaM * 0.55)),
     status: deltaM === 0 ? "no_adjustment" : "provisional",
   });
 }
