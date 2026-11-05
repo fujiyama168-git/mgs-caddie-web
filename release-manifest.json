@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.7.19",
+  "version": "0.7.20-v1-foundation",
   "androidVersionCode": 42,
   "sourceFingerprint": "aec1ed1dcf150ffb5d6af3c40282709728f5f738a0f3b91e077ea48706e2176c",
   "artifactFingerprint": "916063cd122a3477db2448a90b0b1ef80c8acccf9d871504640acd85e608bce6",
@@ -15,7 +15,14 @@
     "golden-cross-course-strategy",
     "data-quality-disclosure",
     "tsurumai-west-old-reference-round",
-    "cid-static-local-boundary"
+    "cid-static-local-boundary",
+    "mgs-v1-width-semantics",
+    "mgs-v1-second-shot-intent",
+    "mgs-v1-elevation-class-runtime",
+    "mgs-v1-elevation-adjustment",
+    "mgs-v1-foundation-regression"
   ],
-  "preparedAt": "2026-10-23T03:50:43.415598+00:00"
+  "preparedAt": "2026-11-05T10:07:00+09:00",
+  "baselineCommit": "3aa39e4116da169c475218c791d7463439ac14b4",
+  "implementationBranch": "mgs-v1-foundation-20261105"
 }
