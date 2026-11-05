@@ -15,4 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Syntax check patched ESM bundles
+        run: |
+          node --input-type=module --check < assets/mgs-v1-core.js
+          node --input-type=module --check < assets/store-BjDoKEky.js
+          node --input-type=module --check < assets/strategy-DKwdk79U.js
       - run: node tests/mgs-v1-foundation.test.mjs
