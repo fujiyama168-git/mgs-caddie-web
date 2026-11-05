@@ -139,6 +139,22 @@ export function adjustCarryLandingForElevation(flatCarryYd, segment, formulaId =
   });
 }
 
+export function adjustCarryLandingMeters(flatCarryM, segment, formulaId = ELEVATION_FORMULA_VERSION) {
+  const measured = finite(segment?.measured_delta_m) ? segment.measured_delta_m : null;
+  const model = finite(segment?.model_delta_m) ? segment.model_delta_m : 0;
+  const deltaM = measured ?? model;
+  return Object.freeze({
+    input_carry_m: round1(flatCarryM),
+    input_delta_m: round1(deltaM),
+    delta_source: measured !== null ? "measured" : "class_model",
+    formula_id: formulaId,
+    formula_version: ELEVATION_FORMULA_VERSION,
+    adjustment_m: round1(deltaM),
+    adjusted_landing_m: round1(Math.max(0, flatCarryM - deltaM)),
+    status: deltaM === 0 ? "no_adjustment" : "provisional",
+  });
+}
+
 function unsafeIntentionalArea(point, areas = []) {
   return areas.some((area) => {
     if (!area) return false;
