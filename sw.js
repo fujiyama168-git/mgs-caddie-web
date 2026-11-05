@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'mgs-caddie-'
-const CACHE = 'mgs-caddie-v28'
+const CACHE = 'mgs-caddie-v29'
 const BASE = new URL('./', self.registration.scope).toString()
 const APP_SHELL = new URL('./', BASE).toString()
 const VITE_MANIFEST = new URL('vite-manifest.json', BASE).toString()
